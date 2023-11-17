@@ -1,0 +1,4 @@
+﻿  MenuScene.cpp
+C:\Users\ко\source\repos\DEngine2D\DEngine2D\ComponentModule.h(25): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\ко\source\repos\DEngine2D\DEngine2D\SceneModule.h(67,39): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+  DEngine2D.vcxproj -> C:\Users\ко\source\repos\DEngine2D\x64\Debug\DEngine2D.exe
