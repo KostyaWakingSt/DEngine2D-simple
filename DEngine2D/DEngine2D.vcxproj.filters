@@ -19,15 +19,18 @@
     <Filter Include="Исходные файлы\Scenes">
       <UniqueIdentifier>{23886d3e-7fce-47dd-8fd9-d8923b10e447}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Scenes\SceneComponents">
+      <UniqueIdentifier>{54de90b2-7f6e-4da0-b2d2-fb518695530c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Scenes\SceneComponents">
+      <UniqueIdentifier>{2add321b-5e2f-46f7-a878-41598b7f4268}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DEngine2D.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="SceneModule.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="ComponentModule.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="PhysicModule.cpp">
@@ -44,6 +47,15 @@
     </ClCompile>
     <ClCompile Include="UIComponentModule.cpp">
       <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseEngineComponents.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="MathModule.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSceneComponents.cpp">
+      <Filter>Исходные файлы\Scenes\SceneComponents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +85,18 @@
     </ClInclude>
     <ClInclude Include="UIComponentModule.h">
       <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseEngineComponents.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="MathModule.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSourceData.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuSceneComponents.h">
+      <Filter>Файлы заголовков\Scenes\SceneComponents</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

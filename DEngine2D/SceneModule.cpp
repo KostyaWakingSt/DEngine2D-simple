@@ -1,5 +1,8 @@
 #include "SceneModule.h"
 
+using namespace EngineScene;
+extern SceneManager global_sceneManager;
+
 SceneObject::SceneObject(const std::string name) {
 	m_name = name;
 }
@@ -14,24 +17,24 @@ void SceneObject::setName(const std::string name) {
 	m_name = name;
 }
 
-void SceneObject::update() {
+void SceneObject::update(const float deltaTime) {
 	for (auto& component : m_components) {
-		component->update();
+		component->update(deltaTime);
 	}
 }
 
-void SceneEntity::update() {
+void SceneEntity::update(const float deltaTime) {
 	for (auto& sceneObj : m_objects) {
-		sceneObj->update();
+		sceneObj->update(deltaTime);
 	}
 }
 
-void SceneEntity::initialize(sf::RenderWindow* const& renderWindow) {
+void SceneEntity::initialize() {
 	if (m_initFunc)
-		m_initFunc(this, renderWindow);
+		m_initFunc(this);
 }
 
-void SceneEntity::setInitFunc(void(*initFunc)(SceneEntity* const&, sf::RenderWindow* const&)) {
+void SceneEntity::setInitFunc(void(*initFunc)(SceneEntity* const&)) {
 	m_initFunc = initFunc;
 }
 
@@ -44,6 +47,19 @@ SceneObject* SceneEntity::findObjectByName(const std::string name, const bool& f
 
 			if (first)
 				break;
+		}
+	}
+
+	return output;
+}
+
+SceneObject* SceneEntity::findInActiveScene(const std::string name) {
+	EngineScene::SceneObject* output = nullptr;
+
+	for (auto& sceneObj : global_sceneManager.getActiveScene().getAllObjectsOnScene()) {
+		if (sceneObj.get()->getName() == name) {
+			output = sceneObj.get();
+			break;
 		}
 	}
 
@@ -71,9 +87,7 @@ void SceneManager::removeScene(const int sceneIndex) {
 	//m_scenes.erase(m_scenes.begin() + sceneIndex);
 }
 
-void SceneManager::initialize(const int startSceneIndex, sf::RenderWindow* const& window) {
-	m_renderWindow = window;
-
+void SceneManager::initialize(const int startSceneIndex) {
 	setScene(startSceneIndex);
 }
 
@@ -83,11 +97,15 @@ void SceneManager::setScene(const int index) {
 	}
 
 	m_currentScene = new SceneEntity(m_scenes.at(index));
-	m_currentScene->initialize(m_renderWindow);
+	m_currentScene->initialize();
 }
 
-void SceneManager::update() {
+void SceneManager::update(const float deltaTime) {
 	if (m_currentScene != nullptr) {
-		m_currentScene->update();
+		m_currentScene->update(deltaTime);
 	}
+}
+
+const SceneEntity& SceneManager::getActiveScene() const {
+	return *m_currentScene;
 }

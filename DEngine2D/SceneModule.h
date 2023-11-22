@@ -6,91 +6,87 @@
 #include <vector>
 #include "ComponentModule.h"
 
-class SceneObject : public IUpdatable {
-public:
-	std::string getName() const;
-	void setName(const std::string name);
+namespace EngineScene {
+	class SceneObject : public IUpdatable {
+	public:
+		std::string getName() const;
+		void setName(const std::string name);
 
-	template<class T = Component>
-	void addComponent() {
-		std::shared_ptr<Component> component{new T()};
-		component->initialize();
+		template<class T = Component>
+		void addComponent() {
+			std::shared_ptr<Component> component{new T()};
+			component->initialize();
 
-		m_components.push_back(component);
-	}
-
-	template<class T = Component>
-	T* getComponent() {
-		T* output = nullptr;
-
-		for (auto& component : m_components) {
-			if (T* ptr = dynamic_cast<T*>(component.get())) {
-				output = ptr;
-			}
+			m_components.push_back(component);
 		}
 
-		return output;
-	}
+		template<class T = Component>
+		T* getComponent() {
+			T* output = nullptr;
 
-	template<class T = Component>
-	void removeComponent() {
-		std::shared_ptr<T> output = nullptr;
-
-		for (auto& component : m_components) {
-			if (T* ptr = dynamic_cast<T*>(component.get())) {
-				output = component;
+			for (auto& component : m_components) {
+				if (T* ptr = dynamic_cast<T*>(component.get())) {
+					output = ptr;
+				}
 			}
+
+			return output;
 		}
 
-		m_components.remove(output);
-	}
+		template<class T = Component>
+		void removeComponent() {
+			std::shared_ptr<T> output = nullptr;
 
-	void update();
+			for (auto& component : m_components) {
+				if (T* ptr = dynamic_cast<T*>(component.get())) {
+					output = component;
+				}
+			}
 
-	SceneObject(const std::string name);
-	SceneObject();
-private:
-	std::list<std::shared_ptr<Component>> m_components;
+			m_components.remove(output);
+		}
 
-	std::string m_name = "unnamed";
-};
+		void update(const float deltaTime);
 
-class SceneEntity : public IUpdatable {
-public:
-	SceneObject* findObjectByName(const std::string name, const bool& first = true);
-	std::list<std::shared_ptr<SceneObject>> getAllObjectsOnScene() const;
+		SceneObject(const std::string name);
+		SceneObject();
+	private:
+		std::list<std::shared_ptr<Component>> m_components;
+		std::string m_name = "unnamed";
+	};
 
-	void initialize(sf::RenderWindow* const& renderWindow);
-	void setInitFunc(void(*initFunc)(SceneEntity* const&, sf::RenderWindow* const&));
 
-	void update();
-	void addObject(SceneObject& const obj);
-	void removeObject(SceneObject* const& obj);
-private:
-	std::list<std::shared_ptr<SceneObject>> m_objects;
-	void(*m_initFunc)(SceneEntity* const&, sf::RenderWindow* const&);
-};
+	class SceneEntity : public IUpdatable {
+	public:
+		SceneObject* findObjectByName(const std::string name, const bool& first = true);
+		std::list<std::shared_ptr<SceneObject>> getAllObjectsOnScene() const;
 
-class SceneManager : public IUpdatable {
-public:
-	void update() override;
+		void initialize();
+		void setInitFunc(void(*initFunc)(SceneEntity* const&));
 
-	void addScene(const SceneEntity& scene);
-	void removeScene(const int sceneIndex);
+		void update(const float deltaTime);
+		void addObject(SceneObject& const obj);
+		void removeObject(SceneObject* const& obj);
 
-	void setScene(const int index);
-	void initialize(const int startSceneIndex, sf::RenderWindow* const& window);
+		static SceneObject* findInActiveScene(const std::string name);
+	private:
+		std::list<std::shared_ptr<SceneObject>> m_objects;
+		void(*m_initFunc)(SceneEntity* const&);
+	};
 
-	//~SceneManager() {
-	//	delete m_currentScene;
-	//}
-private:
-	sf::RenderWindow* m_renderWindow;
-	SceneEntity* m_currentScene = nullptr;
-	std::vector<SceneEntity> m_scenes;
-};
+	class SceneManager : public IUpdatable {
+	public:
+		void update(const float deltaTime);
 
-//class SceneInitializabler {
-//public:
-//	virtual void initialize(SceneEntity* const& scene, sf::RenderWindow* const& renderWindow);
-//};
+		void addScene(const SceneEntity& scene);
+		void removeScene(const int sceneIndex);
+
+		void setScene(const int index);
+		void initialize(const int startSceneIndex);
+
+		const SceneEntity& getActiveScene() const;
+	private:
+		SceneEntity* m_currentScene = nullptr;
+		std::vector<SceneEntity> m_scenes;
+	};
+}

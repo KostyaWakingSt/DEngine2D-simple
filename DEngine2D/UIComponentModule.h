@@ -1,11 +1,12 @@
 #pragma once
 
-#include "ComponentModule.h"
-#include "SceneModule.h"
+#include "BaseEngineComponents.h";
+
+using namespace EngineComponent;
 
 class ImageComponent : public Component {
 public:
-	void update() override;
+	void update(const float deltaTime) override;
 	void initialize() override;
 
 	void setRenderer(RendererComponent* const& renderer);
@@ -14,7 +15,6 @@ public:
 private:
 	RendererComponent* m_renderer;
 };
-
 //class GridComponent : public Component {
 //public:
 //	void update() override;

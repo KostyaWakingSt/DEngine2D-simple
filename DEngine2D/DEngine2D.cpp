@@ -6,10 +6,14 @@
 #include "MainGameScene.h"
 #include "ScenePhysicTest.h"
 #include "MenuScene.h"
+#include "GameSourceData.h"
+
+extern SceneManager global_sceneManager;
+extern sf::RenderWindow* global_window;
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(1280, 720), "game");
+	global_window = new sf::RenderWindow(sf::VideoMode(1280, 720), "game");
 
 	//scene create
 	SceneEntity mainScene{};
@@ -23,35 +27,30 @@ int main()
 	menuScene.setInitFunc(initMenuScene);
 	//end init
 
-	SceneManager sceneManager{};
+	//SceneManager sceneManager{};
 	//sceneManager.addScene(physicScene);
-	//sceneManager.addScene(mainScene);
-	sceneManager.addScene(menuScene);
-	sceneManager.initialize(0, &window);
+	global_sceneManager.addScene(menuScene);
+	global_sceneManager.addScene(mainScene);
+	global_sceneManager.initialize(0);
 
-	while (window.isOpen())
+	sf::Clock clock;
+	while (global_window->isOpen())
 	{
 		sf::Event event;
-		while (window.pollEvent(event))
+		while (global_window->pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
-				window.close();
+				global_window->close();
 		}
 
-		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
-		//	sceneManager.setScene(0);
-		//}
+		float delta = clock.restart().asSeconds();
 
-		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
-		//	sceneManager.setScene(1);
-		//}
-
-		window.clear(sf::Color::Black);
+		global_window->clear(sf::Color::Black);
 
 		//update scenes
-		sceneManager.update();
+		global_sceneManager.update(delta);
 		//end update
 
-		window.display();
+		global_window->display();
 	}
 }

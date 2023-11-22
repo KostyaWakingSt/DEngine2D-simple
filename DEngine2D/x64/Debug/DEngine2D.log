@@ -1,29 +1,49 @@
-﻿  ComponentModule.cpp
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\ComponentModule.h(25): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+﻿  BaseEngineComponents.cpp
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(68,40): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\BaseEngineComponents.h(15): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
   DEngine2D.cpp
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\ComponentModule.h(25): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(67,39): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\PhysicModule.h(24,2): warning C4091: static : пропускается слева от "VectorMath", когда ни одна переменная не объявлена
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(68,40): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
   MainGameScene.cpp
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\ComponentModule.h(25): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(67,39): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(68,40): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
   MenuScene.cpp
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\ComponentModule.h(25): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(67,39): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(68,40): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\UIComponentModule.h(3,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\BaseEngineComponents.h(15): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+  MenuSceneComponents.cpp
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(68,40): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\BaseEngineComponents.h(15): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\MenuSceneComponents.cpp(15,101): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\MenuSceneComponents.cpp(18,102): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\MenuSceneComponents.cpp(21,99): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\MenuSceneComponents.cpp(24,98): warning C4305: аргумент: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
   PhysicModule.cpp
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\ComponentModule.h(25): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(67,39): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\PhysicModule.h(24,2): warning C4091: static : пропускается слева от "VectorMath", когда ни одна переменная не объявлена
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(68,40): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\MathModule.h(21,2): warning C4091: static : пропускается слева от "VectorMath", когда ни одна переменная не объявлена
   SceneModule.cpp
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\ComponentModule.h(25): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(67,39): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.cpp(53,51): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(68,40): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.cpp(69,51): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
   ScenePhysicTest.cpp
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\ComponentModule.h(25): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(67,39): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\PhysicModule.h(24,2): warning C4091: static : пропускается слева от "VectorMath", когда ни одна переменная не объявлена
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(68,40): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\BaseEngineComponents.h(15): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
   UIComponentModule.cpp
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\ComponentModule.h(25): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(67,39): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\UIComponentModule.h(3,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\SceneModule.h(68,40): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\DEngine2D\BaseEngineComponents.h(15): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
   Создание кода...
   DEngine2D.vcxproj -> C:\Users\ко\source\repos\DEngine2D\DEngine2D--simple-\x64\Debug\DEngine2D.exe
