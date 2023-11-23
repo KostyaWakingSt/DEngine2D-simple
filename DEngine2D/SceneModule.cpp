@@ -17,15 +17,15 @@ void SceneObject::setName(const std::string name) {
 	m_name = name;
 }
 
-void SceneObject::update(const float deltaTime) {
+void SceneObject::update() {
 	for (auto& component : m_components) {
-		component->update(deltaTime);
+		component->update();
 	}
 }
 
-void SceneEntity::update(const float deltaTime) {
+void SceneEntity::update() {
 	for (auto& sceneObj : m_objects) {
-		sceneObj->update(deltaTime);
+		sceneObj->update();
 	}
 }
 
@@ -56,7 +56,7 @@ SceneObject* SceneEntity::findObjectByName(const std::string name, const bool& f
 SceneObject* SceneEntity::findInActiveScene(const std::string name) {
 	EngineScene::SceneObject* output = nullptr;
 
-	for (auto& sceneObj : global_sceneManager.getActiveScene().getAllObjectsOnScene()) {
+	for (auto& sceneObj : global_sceneManager.getActiveScene()->getAllObjectsOnScene()) {
 		if (sceneObj.get()->getName() == name) {
 			output = sceneObj.get();
 			break;
@@ -76,6 +76,10 @@ void SceneEntity::removeObject(SceneObject* const& obj) {
 
 std::list<std::shared_ptr<SceneObject>> SceneEntity::getAllObjectsOnScene() const {
 	return m_objects;
+}
+
+void SceneEntity::create(SceneObject& sceneObj) {
+	global_sceneManager.getActiveScene()->addObject(sceneObj);
 }
 
 void SceneManager::addScene(const SceneEntity& scene) {
@@ -100,12 +104,12 @@ void SceneManager::setScene(const int index) {
 	m_currentScene->initialize();
 }
 
-void SceneManager::update(const float deltaTime) {
+void SceneManager::update() {
 	if (m_currentScene != nullptr) {
-		m_currentScene->update(deltaTime);
+		m_currentScene->update();
 	}
 }
 
-const SceneEntity& SceneManager::getActiveScene() const {
-	return *m_currentScene;
+SceneEntity* SceneManager::getActiveScene() {
+	return m_currentScene;
 }

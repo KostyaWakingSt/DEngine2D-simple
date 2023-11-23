@@ -8,13 +8,16 @@ using namespace EngineScene;
 namespace EngineComponent {
 	class RendererComponent : public Component {
 	public:
-		void update(const float deltaTime) override;
+		void update() override;
 		void initialize() override;
 
 		template <typename T = sf::Drawable>
 		void setTarget(T& const target) {
 			m_target = new T(target);
 		}
+
+		void setTexture(const sf::Texture& sprite);
+		void setTextureFromFile(const std::string& path);
 
 		sf::Drawable* getTarget() const;
 		sf::Shape* getShapeFromTarget() const;
@@ -26,20 +29,9 @@ namespace EngineComponent {
 		sf::Drawable* m_target;
 	};
 
-	class ObjectCreateComponent : public Component {
-	public:
-		void update(const float deltaTime) override;
-		void initialize() override;
-
-		void setSceneTarget(SceneEntity* const& sceneTarget);
-		void create(SceneObject& sceneObj);
-	private:
-		SceneEntity* m_sceneTarget;
-	};
-
 	class TransformComponent : public Component {
 	public:
-		void update(const float deltaTime) override;
+		void update() override;
 		void initialize() override;
 
 		void setTarget(sf::Transformable* const& target);

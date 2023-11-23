@@ -46,7 +46,7 @@ namespace EngineScene {
 			m_components.remove(output);
 		}
 
-		void update(const float deltaTime);
+		void update();
 
 		SceneObject(const std::string name);
 		SceneObject();
@@ -64,11 +64,12 @@ namespace EngineScene {
 		void initialize();
 		void setInitFunc(void(*initFunc)(SceneEntity* const&));
 
-		void update(const float deltaTime);
+		void update();
 		void addObject(SceneObject& const obj);
 		void removeObject(SceneObject* const& obj);
 
 		static SceneObject* findInActiveScene(const std::string name);
+		static void create(SceneObject& sceneObj);
 	private:
 		std::list<std::shared_ptr<SceneObject>> m_objects;
 		void(*m_initFunc)(SceneEntity* const&);
@@ -76,7 +77,7 @@ namespace EngineScene {
 
 	class SceneManager : public IUpdatable {
 	public:
-		void update(const float deltaTime);
+		void update();
 
 		void addScene(const SceneEntity& scene);
 		void removeScene(const int sceneIndex);
@@ -84,7 +85,7 @@ namespace EngineScene {
 		void setScene(const int index);
 		void initialize(const int startSceneIndex);
 
-		const SceneEntity& getActiveScene() const;
+		SceneEntity* getActiveScene();
 	private:
 		SceneEntity* m_currentScene = nullptr;
 		std::vector<SceneEntity> m_scenes;

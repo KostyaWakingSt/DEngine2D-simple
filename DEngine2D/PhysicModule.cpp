@@ -3,7 +3,7 @@
 
 //--------------BOX_COLLIDER--------------
 void BoxColliderComponent::initialize() { }
-void BoxColliderComponent::update(const float deltaTime) { }
+void BoxColliderComponent::update() { }
 
 void BoxColliderComponent::setSize(sf::Vector2f* const& size) {
     m_size = sf::Vector2f(size->x/2, size->y/2);
@@ -55,7 +55,7 @@ void BoxCastComponent::addColliderObject(BoxColliderComponent* const& collider) 
 
 void BoxCastComponent::initialize() { }
 
-void BoxCastComponent::update(const float deltaTime) {
+void BoxCastComponent::update() {
     for(auto& collider : m_colliders)
     {
         for (auto& colliderTwo : m_colliders)

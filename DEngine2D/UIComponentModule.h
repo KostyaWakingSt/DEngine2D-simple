@@ -6,7 +6,7 @@ using namespace EngineComponent;
 
 class ImageComponent : public Component {
 public:
-	void update(const float deltaTime) override;
+	void update() override;
 	void initialize() override;
 
 	void setRenderer(RendererComponent* const& renderer);

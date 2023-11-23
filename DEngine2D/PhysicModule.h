@@ -9,7 +9,7 @@
 
 class BoxColliderComponent : public Component {
 public:
-	void update(const float deltaTime) override;
+	void update() override;
 	void initialize() override;
 
 	void setTarget(sf::Transformable* const& target);
@@ -26,7 +26,7 @@ private:
 
 class BoxCastComponent : public Component {
 public:
-	void update(const float deltaTime) override;
+	void update() override;
 	void initialize() override;
 
 	void addColliderObject(BoxColliderComponent* const& collider);

@@ -5,11 +5,11 @@
 
 __interface IUpdatable
 {
-	void update(const float deltaTime) = 0;
+	void update() = 0;
 };
 
 class Component : public IUpdatable {
 public:
-	virtual void update(const float deltaTime) = 0;
+	virtual void update() = 0;
 	virtual void initialize() = 0;
 };

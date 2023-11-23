@@ -57,6 +57,12 @@
     <ClCompile Include="MenuSceneComponents.cpp">
       <Filter>Исходные файлы\Scenes\SceneComponents</Filter>
     </ClCompile>
+    <ClCompile Include="BaseModule.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SceneModule.h">
@@ -97,6 +103,9 @@
     </ClInclude>
     <ClInclude Include="MenuSceneComponents.h">
       <Filter>Файлы заголовков\Scenes\SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

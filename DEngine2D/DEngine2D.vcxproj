@@ -134,7 +134,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaseEngineComponents.cpp" />
+    <ClCompile Include="BaseModule.cpp" />
     <ClCompile Include="DEngine2D.cpp" />
+    <ClCompile Include="Engine.cpp" />
     <ClCompile Include="MainGameScene.cpp" />
     <ClCompile Include="MathModule.cpp" />
     <ClCompile Include="MenuScene.cpp" />
@@ -148,6 +150,7 @@
     <ClInclude Include="BaseEngineComponents.h" />
     <ClInclude Include="BaseModule.h" />
     <ClInclude Include="ComponentModule.h" />
+    <ClInclude Include="Engine.h" />
     <ClInclude Include="MainGameScene.h" />
     <ClInclude Include="MathModule.h" />
     <ClInclude Include="MenuScene.h" />

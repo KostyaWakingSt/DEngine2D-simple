@@ -5,7 +5,7 @@ using namespace EngineComponent;
 extern sf::RenderWindow* global_window;
 
 void ImageComponent::initialize() { }
-void ImageComponent::update(const float deltaTime) { }
+void ImageComponent::update() { }
 
 void ImageComponent::setRenderer(RendererComponent* const& renderer) {
 	m_renderer = renderer;
